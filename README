@@ -1,11 +1,14 @@
 Dude
 ==========================================================================
 
-A quick and dirty bash script (for now) that may help the user find out
-where is the free space gone.
+A neat tool to determine where your free space actually goes. Relies on
+files created by "du" utility. The first value in the table is a size
+difference, the second is old size, the third is new size.
 
-Быстрый и грязный скрипт на языке bash (пока что), который поможет понять,
-куда девается свободное место.
+Милый инструмент для выяснения, куда же все-таки девается свободное место.
+Для работы нужны два файла, созданных утилитой du. Первая цифра в выводе -
+разница в размере директории, вторая - старый размер, третья - новый
+размер.
 
 ==========================================================================
 
@@ -17,11 +20,8 @@ du -m /usr > wtfspace1 && sleep 600 && du -m /usr > wtfspace2
 А потом, при помощи этого скрипта проверяете, какую директорию раздуло,
 и насколько:
 
-dude.sh wtfdiffspace1 wtfdiffspace2 
+dude.py wtfdiffspace1 wtfdiffspace2 
 
 Можно еще и отсортировать, дабы выявить самых прожорливых:
 
-dude.sh wtfdiffspace1 wtfdiffspace2 | sort -n
-
-За качество кода не бейте, Баш - не моя специализация, и писалось оно
-на скорую руку. Позже, возможно, перепишу на питоне, а пока - вот так.
+dude.py wtfdiffspace1 wtfdiffspace2 | sort -n
