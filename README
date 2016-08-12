@@ -20,8 +20,8 @@ du -m /usr > wtfspace1 && sleep 600 && du -m /usr > wtfspace2
 А потом, при помощи этого скрипта проверяете, какую директорию раздуло,
 и насколько:
 
-dude.py wtfdiffspace1 wtfdiffspace2 
+dude.py wtfspace1 wtfspace2 
 
 Можно еще и отсортировать, дабы выявить самых прожорливых:
 
-dude.py wtfdiffspace1 wtfdiffspace2 | sort -n
+dude.py wtfspace1 wtfspace2 | sort -n
